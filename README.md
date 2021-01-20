@@ -5,7 +5,7 @@
 
 <br />
 
-This repository aims to perform numerical simulation of a simplificated version of a robot arm, Canadarm2, under different gravity conditions using the following open source libraries:
+This repository aims to perform numerical simulations of a simplificated version of a robot arm under different gravity conditions. In adittion, the energy consumption is compared for all cases. The following Python open source libraries were assessed to perform the simulations:
 
 - Sympy for symbolic mathematics;
 - Scipy for scientific computing;
@@ -33,7 +33,7 @@ Aboard the International Space Station (ISS) there is a robotic system that play
 </p>
 
 <p align="center">
-<strong>Fig. 1</strong> - Astronaut Stephen K. Robinson anchored to the end of Canadarm2 during STS-114, 2005. 
+<strong>Fig. 1</strong> - Astronaut Stephen K. Robinson anchored to the end of Canadarm2 during STS-114, 2005 [1]. 
 </p>
 
 <br />
@@ -51,20 +51,27 @@ Therefore, the system has to be able to perform different movements including li
 
 ## Modeling
 
-To be able to model a two-dimensional version of Canadarm2, a lot of simplifications must be done. For instance, as seen in Fig. 2 the robotic arm has 7 degrees of freedom (DOF), which can be challenging and 
+To be able to model a two-dimensional version of Canadarm2, a lot of simplifications must be done. As seen in Fig. 2 and Fig. 3, the robotic arm has 7 degrees of freedom (DOF), which can be challenging for modelling tasks and computational calculations. 
 
+<br />
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/60149913/105221882-18f1f500-5b30-11eb-9fb5-a7fb1d0d2857.png">
 </p>
 
 <p align="center">
-<strong>Fig. 2</strong> - Astronaut Stephen K. Robinson anchored to the end of Canadarm2 during STS-114, 2005. 
+<strong>Fig. 2</strong> - 3D representation of Canadarm2 and its joints [4].
 </p>
 
+<br />
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/60149913/105223551-4dff4700-5b32-11eb-8785-6eee1a6fa936.jpg">
+</p>
 
-
+<p align="center">
+<strong>Fig. 3</strong> - Canadarm2 diagram [5].
+</p>
 
 
 <p align="center">
@@ -77,3 +84,7 @@ To be able to model a two-dimensional version of Canadarm2, a lot of simplificat
 [2] https://www.nasa.gov/mission_pages/station/structure/elements/remote-manipulator-system-canadarm2/
 <br /> 
 [3] https://www.nasa.gov/mission_pages/station/structure/elements/subsystems.html
+<br /> 
+[4] P. Fournier-Viger, R. Nkambou and A. Mayers, "Evaluating Spatial Representations and Skills in a Simulator-Based Tutoring System," in IEEE Transactions on Learning Technologies, vol. 1, no. 1, pp. 63-74, Jan.-March 2008, doi: 10.1109/TLT.2008.13. 
+<br /> 
+[5] https://spaceq.ca/spacewalk-needed-to-replace-another-degraded-canadarm2-hand-on-the-international-space-station/
