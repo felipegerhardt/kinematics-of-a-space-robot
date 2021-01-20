@@ -73,10 +73,22 @@ To be able to model a two-dimensional version of Canadarm2, a lot of simplificat
 <strong>Fig. 3</strong> - Canadarm2 diagram [5].
 </p>
 
+<br />
+
+As the aim of this study is to evaluate the energy consumption under different gravity conditions, the model is considered to have two-dimensional nature and the DOF is are simplified as show Fig. 4.
+
+<br />
 
 <p align="center">
-  <img witdh="455" height="300" src="https://user-images.githubusercontent.com/60149913/105189997-f0580400-5b0b-11eb-99f7-35e8250f8d20.png">
+  <img witdh="455" height="300" src="https://user-images.githubusercontent.com/60149913/105226531-79843080-5b36-11eb-9316-ba4315a9ed8e.png">
 </p>
+
+<br />
+
+<p align="center">
+<strong>Fig. 4</strong> - The 2D model schematic and DOFs.
+</p>
+
 
 ## References
 [1] https://en.wikipedia.org/wiki/Mobile_Servicing_System#Canadarm2
