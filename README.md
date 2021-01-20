@@ -5,7 +5,7 @@
 
 <br />
 
-This repository aims to perform numerical simulation of a robot arm under different conditions using the following open source libraries:
+This repository aims to perform numerical simulation of a simplificated version of a robot arm, Canadarm2, under different gravity conditions using the following open source libraries:
 
 - Sympy for symbolic mathematics;
 - Scipy for scientific computing;
@@ -51,7 +51,21 @@ Therefore, the system has to be able to perform different movements including li
 
 ## Modeling
 
-To be able to model a two-dimensional version of Canadarm2, a lot of simplifications must be done. For instance, as seen in Fig. 2 the robotic arm has 7 degrees of freedom (DOF). The complexity of its movement is 
+To be able to model a two-dimensional version of Canadarm2, a lot of simplifications must be done. For instance, as seen in Fig. 2 the robotic arm has 7 degrees of freedom (DOF), which can be challenging and 
+
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/60149913/105221882-18f1f500-5b30-11eb-9fb5-a7fb1d0d2857.png">
+</p>
+
+<p align="center">
+<strong>Fig. 2</strong> - Astronaut Stephen K. Robinson anchored to the end of Canadarm2 during STS-114, 2005. 
+</p>
+
+
+
+
+
 
 <p align="center">
   <img witdh="455" height="300" src="https://user-images.githubusercontent.com/60149913/105189997-f0580400-5b0b-11eb-99f7-35e8250f8d20.png">
