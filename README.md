@@ -45,21 +45,21 @@ The focus of this simulaton is to model a simplificated version of the Canadarm2
 
 <br />
 
-Therefore, the system has to be able to perform different movements including linear and rotational displacements among multiple axis.
+Therefore, the system has to be able to perform different movements including linear and rotational displacements among multiple axis. More technical information about the Canadarm2 can be seen in refernce [3].
 
 ---
 
 ## Modeling
 
-To be able to model a two-dimensional version of Canadarm2, a lot of simplifications must be done. For instance, as seen in Fig. 2 the 
+To be able to model a two-dimensional version of Canadarm2, a lot of simplifications must be done. For instance, as seen in Fig. 2 the robotic arm has 7 degrees of freedom (DOF). The complexity of its movement is 
 
 <p align="center">
   <img witdh="455" height="300" src="https://user-images.githubusercontent.com/60149913/105189997-f0580400-5b0b-11eb-99f7-35e8250f8d20.png">
 </p>
 
-
-
-
 ## References
 [1] https://en.wikipedia.org/wiki/Mobile_Servicing_System#Canadarm2
+<br />
 [2] https://www.nasa.gov/mission_pages/station/structure/elements/remote-manipulator-system-canadarm2/
+<br /> 
+[3] https://www.nasa.gov/mission_pages/station/structure/elements/subsystems.html
