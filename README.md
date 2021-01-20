@@ -21,7 +21,7 @@ For animation and graphic visualization purposes, the following libraries are ne
 Aboard the International Space Station (ISS) there is a robotic system that plays a key role in station assembly and maintenance. The Mobile Servicing System (MSS) moves equipment, supplies, support astronauts, services instruments and other payloads. The MSS is composed of three main components:
 - the Space Station Remote Manipulator System (SSRMS), known as Canadarm2, see Fig. 1.;
 - the Mobile Remote Service Base System (MBS);
-- the Spcial Purpose Dexterous Manipulator (SPDM - or "Dextre"/"Canada hand").
+- the Special Purpose Dexterous Manipulator (SPDM - or "Dextre"/"Canada hand").
 
 <br />
 
@@ -30,7 +30,7 @@ Aboard the International Space Station (ISS) there is a robotic system that play
 </p>
 
 <p align="center">
-**Fig. 1*** - Astronaut Stephen K. Robinson anchored to the end of Canadarm2 during STS-114, 2005. 
+<strong>Fig. 1</strong> - Astronaut Stephen K. Robinson anchored to the end of Canadarm2 during STS-114, 2005. 
 </p>
 
 
