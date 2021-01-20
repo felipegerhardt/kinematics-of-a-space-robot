@@ -23,10 +23,12 @@ Aboard the International Space Station (ISS) there is a robotic system that play
 - the Mobile Remote Service Base System (MBS);
 - the Spcial Purpose Dexterous Manipulator (SPDM - or "Dextre"/"Canada hand"), see Fig. 1.
 
+<br />
+
 <p align="center">
   <img img witdh="455" height="300" src="https://user-images.githubusercontent.com/60149913/105194211-ba1c8380-5b0f-11eb-8d72-e362e87db1cf.jpg">
- 
 </p>
+
 <p align="center">
 __Fig. 1__ - Astronaut Stephen K. Robinson anchored to the end of Canadarm2 during STS-114, 2005. 
 </p>
