@@ -75,7 +75,7 @@ To be able to model a two-dimensional version of Canadarm2, a lot of simplificat
 
 <br />
 
-As the aim of this study is to evaluate the energy consumption under different gravity conditions, the model is considered to have two-dimensional nature and the DOF is are simplified as show Fig. 4.
+As the aim of this study is to evaluate the kinematics, kinetics and  the energy consumption under different gravity conditions, the model is considered to have two-dimensional nature and the DOF are simplified as show Fig. 4.
 
 <br />
 
