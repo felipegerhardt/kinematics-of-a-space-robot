@@ -18,7 +18,10 @@ For animation and graphic visualization purposes, the following libraries are ne
 
 ## Inspiration
 
-<p align="center"> ![Robot space arm](https://user-images.githubusercontent.com/60149913/105189997-f0580400-5b0b-11eb-99f7-35e8250f8d20.png) 
+![Robot space arm](https://user-images.githubusercontent.com/60149913/105189997-f0580400-5b0b-11eb-99f7-35e8250f8d20.png) 
+
+<p align="center"> 
+![Robot space arm](https://user-images.githubusercontent.com/60149913/105189997-f0580400-5b0b-11eb-99f7-35e8250f8d20.png) 
 </p>
 
 
