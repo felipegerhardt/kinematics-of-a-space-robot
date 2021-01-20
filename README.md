@@ -25,12 +25,12 @@ Aboard the International Space Station (ISS) there is a robotic system that play
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/60149913/105194211-ba1c8380-5b0f-11eb-8d72-e362e87db1cf.jpg">
-  Fig. 1 - Astronaut Stephen K. Robinson anchored to the end of Canadarm2 during STS-114, 2005. 
+  **Fig. 1** - Astronaut Stephen K. Robinson anchored to the end of Canadarm2 during STS-114, 2005. 
 </p>
 
 
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/60149913/105189997-f0580400-5b0b-11eb-99f7-35e8250f8d20.png">
+  <img witdh="455" height="300" src="https://user-images.githubusercontent.com/60149913/105189997-f0580400-5b0b-11eb-99f7-35e8250f8d20.png">
 </p>
 
