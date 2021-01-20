@@ -75,7 +75,7 @@ To be able to model a two-dimensional version of Canadarm2, a lot of simplificat
 
 <br />
 
-As the aim of this study is to evaluate the kinematics, kinetics and  the energy consumption under different gravity conditions, the model is considered to have two-dimensional nature and the DOF are simplified as show Fig. 4.
+As the aim of this study is to evaluate the kinematics, kinetics and  the energy consumption under different gravity conditions, the model is considered to have two-dimensional nature and the DOF are simplified as show Fig. 4. The 4 DOF characterize the movement of the Lower Arm, Upper Arm, Hand, Finger 1 and Finger 2.
 
 <br />
 
