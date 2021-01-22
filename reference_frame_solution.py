@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 from sympy.physics.mechanics import ReferenceFrame
 from sympy.physics.vector import init_vprinting, dynamicsymbols
 
