@@ -80,7 +80,7 @@ As the aim of this study is to evaluate the kinematics, kinetics and the energy 
 <br />
 
 <p align="center">
-  <img witdh="455" height="300" src="https://user-images.githubusercontent.com/60149913/105226531-79843080-5b36-11eb-9316-ba4315a9ed8e.png">
+  <img witdh="455" height="300" src="https://user-images.githubusercontent.com/60149913/105635696-a4260000-5e3a-11eb-9f30-8431146db0ed.png">
 </p>
 
 <br />
