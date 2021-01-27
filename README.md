@@ -5,7 +5,7 @@
 
 <br />
 
-This repository aims to perform numerical simulations of a simplificated version of a robot arm under different gravity conditions. In adittion, the energy consumption is compared for all cases. The following Python open source libraries were assessed to perform the simulations:
+This repository aims to perform numerical simulations of a simplificated version of a robot arm performing one specific movement under different gravity conditions. In adittion, the energy consumption is compared for all cases. The following Python open source libraries were assessed to perform the simulations:
 
 - SymPy for symbolic mathematics;
 - Scipy for scientific computing;
@@ -14,7 +14,7 @@ This repository aims to perform numerical simulations of a simplificated version
 
 For animation and graphic visualization purposes, the following libraries are needed:
 
-- Matplotlib;
+- Matplotlib.Pyplot;
 - Pydy.viz.
 
 ---
