@@ -7,7 +7,7 @@
 
 This repository aims to perform numerical simulations of a simplificated version of a robot arm under different gravity conditions. In adittion, the energy consumption is compared for all cases. The following Python open source libraries were assessed to perform the simulations:
 
-- Sympy for symbolic mathematics;
+- SymPy for symbolic mathematics;
 - Scipy for scientific computing;
 - Numpy for array manipulation;
 - Pydy for multibody dynamics.
