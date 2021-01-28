@@ -169,13 +169,6 @@ bodies = [lower_arm, upper_arm, hand, finger1, finger2]
 
 fr, frstar = kane.kanes_equations(bodies, loads)
 
-# Simplifying 
-trigsimp(fr + frstar)
-
 mass_matrix = trigsimp(kane.mass_matrix_full)
 
-mass_matrix
-
 forcing_vector = trigsimp(kane.forcing_full)
-
-forcing_vector
