@@ -1,4 +1,4 @@
-from reference_frame_solution import *
+# Loading previous solutions
 from points_location_solution import *
 from sympy.physics.mechanics import Point, dynamicsymbols, inertia, RigidBody
 from sympy import symbols, simplify

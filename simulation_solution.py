@@ -42,7 +42,7 @@ coordinates = [lambda1, lambda2, lambda3, lambda4, lambda5]
 
 speeds = [omega1, omega2, omega3, omega4, omega5]
 
-specifieds = [ground_joint_torque, lower_arm_joint_torque, upper_arm_joint_torque, hand_joint_torque, finger1_joint_torque, finger2_joint_torque]
+specifieds = [ground_joint_torque, lower_arm_joint_torque, upper_arm_joint_torque, finger1_joint_torque, finger2_joint_torque]
 
 # Passing the RHS to the ODE function generator
 right_hand_side = generate_ode_function(forcing_vector, coordinates, speeds, constants, mass_matrix=mass_matrix, specifieds=specifieds)
@@ -79,10 +79,9 @@ numerical_constants = array([1,        # lower_arm_length [m]
                             )
 
 import numpy as np
-specified = [0,0,0]
 t = np.linspace(0,10,60*10)
 
-numerical_specified = [0,0,0,0,0,0]
+numerical_specified = [0,10,0,0,0,0]
 
 right_hand_side(x0, 0.0, numerical_specified, numerical_constants)
 

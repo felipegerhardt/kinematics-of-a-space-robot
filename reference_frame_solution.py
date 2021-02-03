@@ -1,5 +1,9 @@
 from sympy.physics.mechanics import ReferenceFrame
 from sympy.physics.vector import dynamicsymbols
+from sympy import init_printing
+
+# Initialize printing
+init_printing(use_latex='mathjax', pretty_print=False)
 
 # Creating the reference frames
 inertial_frame, lower_arm_frame, upper_arm_frame = ReferenceFrame('I'), ReferenceFrame('L'), ReferenceFrame('U')

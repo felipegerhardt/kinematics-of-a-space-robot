@@ -54,7 +54,7 @@ finger1_grav_force = (finger1_mass_center, finger1_grav_force_vector)
 finger2_grav_force = (finger2_mass_center, finger2_grav_force_vector)
 
 # Creating torque symbols
-ground_joint_torque, lower_arm_joint_torque, upper_arm_joint_torque, hand_joint_torque, finger1_joint_torque, finger2_joint_torque = dynamicsymbols('T_g, T_l, T_u, T_h, T_f1, T_f2')
+ground_joint_torque, lower_arm_joint_torque, upper_arm_joint_torque, finger1_joint_torque, finger2_joint_torque = dynamicsymbols('T_g, T_l, T_u, T_f1, T_f2')
 
 # Lower arm torques
 lower_arm_torque_vector = ground_joint_torque * inertial_frame.z - lower_arm_joint_torque * inertial_frame.z
@@ -62,8 +62,8 @@ lower_arm_torque_vector = ground_joint_torque * inertial_frame.z - lower_arm_joi
 # Upper arm torques
 upper_arm_torque_vector = lower_arm_joint_torque * inertial_frame.z - upper_arm_joint_torque * inertial_frame.z
 
-# Hand arm torques
-hand_torque_vector = upper_arm_joint_torque * inertial_frame.z + finger1_joint_torque * inertial_frame.z - finger2_joint_torque * inertial_frame.z
+# Hand torques
+hand_torque_vector = upper_arm_joint_torque * inertial_frame.z + finger1_joint_torque * inertial_frame.z  - finger2_joint_torque * inertial_frame.z 
 
 # Finger 1 torque
 finger1_torque_vector = finger1_joint_torque * inertial_frame.z
@@ -74,8 +74,8 @@ finger2_torque_vector = finger2_joint_torque * inertial_frame.z
 # Lower arm torque tuple
 lower_arm_torque = (lower_arm_frame, lower_arm_torque_vector)
 
-# Upper arm torque tuple
-upper_arm_torque = (upper_arm_frame, upper_arm_torque_vector)
+# Upper arm torque tuple 
+upper_arm_torque = (upper_arm_frame, lower_arm_torque_vector)
 
 # Hand torque tuple
 hand_torque = (hand_frame, hand_torque_vector)
@@ -161,7 +161,6 @@ loads = [lower_arm_grav_force,
          finger2_grav_force, 
          lower_arm_torque,
          upper_arm_torque,
-         hand_torque,
          finger1_torque,
          finger2_torque]
          
