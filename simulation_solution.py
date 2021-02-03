@@ -38,6 +38,7 @@ constants = [lower_arm_length,
              finger2_mass,
              finger2_inertia,           
              g]
+
 coordinates = [lambda1, lambda2, lambda3, lambda4, lambda5]
 
 speeds = [omega1, omega2, omega3, omega4, omega5]
@@ -51,9 +52,9 @@ right_hand_side = generate_ode_function(forcing_vector, coordinates, speeds, con
 x0 = zeros(10)
 
 # Speeds initial conditions are zero, while the lower arm, upper arm and hand generalized coordinates are on an 20° angle. The fingers are on a 20° angle with respect to the hand axis.
-x0[5:8] = deg2rad(0)
-x0[8] = deg2rad(0) # Bottom finger
-x0[9] = deg2rad(0) # Top finger
+x0[:3] = deg2rad(-10)
+x0[3] = deg2rad(-10) # Bottom finger
+x0[4] = deg2rad(10) # Top finger
 
 numerical_constants = array([1,        # lower_arm_length [m]
                              0.44309,  # lower_arm_com_length [m]
