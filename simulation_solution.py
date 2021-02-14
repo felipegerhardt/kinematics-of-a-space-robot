@@ -109,11 +109,11 @@ display_constants = {lower_arm_length: 1.0,         # lower_arm_length [m]
                        finger2_inertia: 0.007322,     # finger2_inertia [kg*m^2]
                        g: 9.81}  
 
-numerical_specifieds = {ground_joint_torque: lambda lambda1, t: 10*np.sin(10*t),
-                        lower_arm_joint_torque: lambda lambda2, t: 10*np.sin(10*t),
-                        upper_arm_joint_torque: lambda lambda3, t: 10*np.sin(10*t),
-                        finger1_joint_torque: lambda lambda4, t: 10*np.sin(10*t),
-                        finger2_joint_torque: lambda lambda5, t: 10*np.sin(10*t)}
+numerical_specifieds = {ground_joint_torque: lambda lambda1, t: 100,
+                        lower_arm_joint_torque: lambda lambda2, t: 0,
+                        upper_arm_joint_torque: lambda lambda3, t: 0,
+                        finger1_joint_torque: lambda lambda4, t: 0,
+                        finger2_joint_torque: lambda lambda5, t: 0}
 
 sys = System(kane,
              constants=numerical_constants,
