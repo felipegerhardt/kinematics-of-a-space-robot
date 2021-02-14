@@ -1,19 +1,14 @@
-# Testing System class
-from pydy.system import System
-
 # Loading previous solutions
 from equations_of_motion_solution import *
-from sympy.physics.vector import vlatex
-from sympy import init_printing
+
+# Import System to integrate EOM using Kane's Method
+from pydy.system import System
 
 # Import NumPy functions to setp the numerical values and integrate the equations of motion
 from numpy import deg2rad, rad2deg, array, zeros, linspace
 
 # Import ODE numerical integration routine from SciPy
 from scipy.integrate import odeint  # Not using this function
-
-# Import PyDy's ODE function generation to generate the symbolic equations into numerical function
-from pydy.codegen.ode_function_generators import generate_ode_function
 
 # Import a few functions from Matplotlib.PyPlot
 from matplotlib.pyplot import plot, legend, xlabel, ylabel, rcParams
@@ -57,7 +52,7 @@ t = np.linspace(0,time_span,time_points, dtype=np.float64)
 right_hand_side = generate_ode_function(forcing_vector, coordinates, speeds, constants, mass_matrix=mass_matrix, specifieds=torques)
 
 # Initial conditions 
-x0 = {lambda1: np.deg2rad(90),
+x0 = {lambda1: np.deg2rad(-90),
       lambda2: np.deg2rad(0),
       lambda3: np.deg2rad(0),
       lambda4: np.deg2rad(0),
@@ -90,6 +85,29 @@ numerical_constants = {lower_arm_length: 1.0,         # lower_arm_length [m]
                        finger2_mass: 0.5,             # finger2_mass [kg]
                        finger2_inertia: 0.007322,     # finger2_inertia [kg*m^2]
                        g: 9.81}                       # acceleration due to gravity [m/s^2]
+
+# Scene constants
+display_constants = {lower_arm_length: 1.0,         # lower_arm_length [m]   
+                       lower_arm_com_length: 0.44309, # lower_arm_com_length [m]
+                       lower_arm_mass: 347.2,         # lower_arm_mass [kg]
+                       lower_arm_inertia: 49.945,     # lower_arm_inertia [kg*m^2]
+                       upper_arm_length: 1.62475,     # upper_arm_length [m]
+                       upper_arm_com_length: 0.56774, # upper_arm_com_length [m]
+                       upper_arm_mass: 61.10,         # upper_arm_mass [kg]
+                       upper_arm_inertia: 18.80,      # upper_leg_inertia [kg*m^2]
+                       hand_length: 0.6428,           # hand_length [m]
+                       hand_com_length: 0.1424,       # hand_com_length [m]
+                       hand_mass: 7.33,               # hand_mass [kg]
+                       hand_inertia: 0.31035,         # hand_inertia [kg*m^2]
+                       finger1_length: 0.4218,       # finger1_length [m]          
+                       finger1_com_length: 0.2077,    # finger1_com_length [m]
+                       finger1_mass: 0.5,             # finger1_mass [kg]
+                       finger1_inertia: 0.007322,     # finger1_inertia [kg*m^2]
+                       finger2_length: 0.4218,       # finger2_length [m]          
+                       finger2_com_length: 0.2077,    # finger2_com_length [m]
+                       finger2_mass: 0.5,             # finger2_mass [kg]
+                       finger2_inertia: 0.007322,     # finger2_inertia [kg*m^2]
+                       g: 9.81}  
 
 numerical_specifieds = {ground_joint_torque: lambda lambda1, t: 10*np.sin(10*t),
                         lower_arm_joint_torque: lambda lambda2, t: 10*np.sin(10*t),
