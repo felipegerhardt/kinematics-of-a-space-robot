@@ -89,6 +89,13 @@ As the aim of this study is to evaluate the kinematics, kinetics and the energy 
 <strong>Fig. 4</strong> - The 2D model schematic and DOFs.
 </p>
 
+---
+
+## Simulations
+
+The numerical simulations will output the generalized coordinates and velocities for each rigid body given the input specified torques. Given this data, a neural network model will be impleted to balance the system in the vertical direction.
+
+---
 
 ## References
 [1] https://en.wikipedia.org/wiki/Mobile_Servicing_System#Canadarm2

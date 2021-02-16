@@ -7,14 +7,14 @@ from pydy.system import System
 # Import NumPy functions to setp the numerical values and integrate the equations of motion
 from numpy import deg2rad, rad2deg, array, zeros, linspace
 
-# Import ODE numerical integration routine from SciPy
-from scipy.integrate import odeint  # Not using this function
+# Import generate_ode_function to transform symbolic equations to numerical functions
+from pydy.codegen.ode_function_generators import generate_ode_function
 
 # Import a few functions from Matplotlib.PyPlot
 from matplotlib.pyplot import plot, legend, xlabel, ylabel, rcParams
 
 # Creating a list with the symbolic constants
-constants = [lower_arm_length,               # Symbolic form
+constants = [lower_arm_length,                               # Symbolic form
              lower_arm_com_length,
              lower_arm_mass,
              lower_arm_inertia,
@@ -36,14 +36,13 @@ constants = [lower_arm_length,               # Symbolic form
              finger2_inertia,           
              g]
 
+# Create lists to hold the torques, coordinates and speeds
 torques = [ground_joint_torque, lower_arm_joint_torque, upper_arm_joint_torque, finger1_joint_torque, finger2_joint_torque]
-
 coordinates = [lambda1, lambda2, lambda3, lambda4, lambda5]
-
 speeds = [omega1, omega2, omega3, omega4, omega5]
 
-# Creating time domain as an array
-time_span = 10
+# Creating time domain as an numpy array
+time_span = 5     
 time_points = 60*10
 import numpy as np
 t = np.linspace(0,time_span,time_points, dtype=np.float64)
@@ -52,7 +51,7 @@ t = np.linspace(0,time_span,time_points, dtype=np.float64)
 right_hand_side = generate_ode_function(forcing_vector, coordinates, speeds, constants, mass_matrix=mass_matrix, specifieds=torques)
 
 # Initial conditions 
-x0 = {lambda1: np.deg2rad(-90),
+x0 = {lambda1: np.deg2rad(-90),                      # Lower arm horizontally oriented
       lambda2: np.deg2rad(0),
       lambda3: np.deg2rad(0),
       lambda4: np.deg2rad(0),
@@ -63,6 +62,7 @@ x0 = {lambda1: np.deg2rad(-90),
       omega4: 0.0,
       omega5: 0.0}
 
+ 
 # Numerical constants
 numerical_constants = {lower_arm_length: 1.0,         # lower_arm_length [m]   
                        lower_arm_com_length: 0.44309, # lower_arm_com_length [m]
@@ -76,11 +76,11 @@ numerical_constants = {lower_arm_length: 1.0,         # lower_arm_length [m]
                        hand_com_length: 0.1424,       # hand_com_length [m]
                        hand_mass: 7.33,               # hand_mass [kg]
                        hand_inertia: 0.31035,         # hand_inertia [kg*m^2]
-                       #finger1_length: 0.4218,       # finger1_length [m]          Doesn't matter/Not on the mass or forcing matrices
+                       #finger1_length: 0.4218,       # finger1_length [m]                Don't matter/Not in the mass or forcing matrices
                        finger1_com_length: 0.2077,    # finger1_com_length [m]
                        finger1_mass: 0.5,             # finger1_mass [kg]
                        finger1_inertia: 0.007322,     # finger1_inertia [kg*m^2]
-                       #finger2_length: 0.4218,       # finger2_length [m]           Doesn't matter/Not on the mass or forcing matrices
+                       #finger2_length: 0.4218,       # finger2_length [m]                Don't matter/Not in the mass or forcing matrices
                        finger2_com_length: 0.2077,    # finger2_com_length [m]
                        finger2_mass: 0.5,             # finger2_mass [kg]
                        finger2_inertia: 0.007322,     # finger2_inertia [kg*m^2]
@@ -109,12 +109,14 @@ display_constants = {lower_arm_length: 1.0,         # lower_arm_length [m]
                        finger2_inertia: 0.007322,     # finger2_inertia [kg*m^2]
                        g: 9.81}  
 
-numerical_specifieds = {ground_joint_torque: lambda lambda1, t: 100,
+# Numerical specifieds
+numerical_specifieds = {ground_joint_torque: lambda lambda1, t: 0,
                         lower_arm_joint_torque: lambda lambda2, t: 0,
                         upper_arm_joint_torque: lambda lambda3, t: 0,
                         finger1_joint_torque: lambda lambda4, t: 0,
                         finger2_joint_torque: lambda lambda5, t: 0}
 
+# Integrating the system with the constants, specified and initial condition values
 sys = System(kane,
              constants=numerical_constants,
              specifieds=numerical_specifieds,
