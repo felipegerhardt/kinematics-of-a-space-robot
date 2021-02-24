@@ -93,7 +93,7 @@ As the aim of this study is to evaluate the kinematics under different gravity c
 
 ## Simulations
 
-The numerical simulations will output the generalized coordinates and velocities for each rigid body given the input specified torques. Given this data, a neural network model will be impleted to balance the system in the vertical direction.
+The numerical simulations output the generalized coordinates and velocities for each rigid body given the input of specified torques. There are 5 torques applied to the joints for each gravity condition, which means there are 15 torques functions. The same torques combination are applied in different gravity condition for sake of comparison, totalizing 9 simulations.
 
 ---
 

@@ -54,8 +54,8 @@ right_hand_side = generate_ode_function(forcing_vector, coordinates, speeds, con
 x0 = {lambda1: np.deg2rad(-90),                      # Lower arm horizontally oriented
       lambda2: np.deg2rad(0),
       lambda3: np.deg2rad(0),
-      lambda4: np.deg2rad(0),
-      lambda5: np.deg2rad(0),
+      lambda4: np.deg2rad(15),
+      lambda5: np.deg2rad(-15),
       omega1: 0.0,
       omega2: 0.0,
       omega3: 0.0,
@@ -88,13 +88,6 @@ display_constants = {lower_arm_length: 1.0,         # lower_arm_length [m]
 # Declare the gravity values for earth, mars and the moon.
 g_values = [9.81, 3.711, 1.62] 
 
-# Declare the torques values for each gravity and rigid body and the solution vector
-torques_values = {'ground_joint_torques_values': [1000*t**2, 500*t**2, 200*t**2],
-                  'lower_arm_torques_values': [500*t**2, 200*t**2, 100*t**2],
-                  'upper_arm_torques_values': [500*t**2, 200*t**2, 100*t**2],
-                  'finger1_arm_torques_values': [200*t**2, 100*t**2, 50*t**2],
-                  'finger2_arm_torques_values': [200*t**2, 100*t**2, 50*t**2]}
-
 solutions = []
 
 for i in range(len(g_values)):
@@ -124,23 +117,23 @@ for i in range(len(g_values)):
 
 
        # Numerical specifieds
-      numerical_specifieds = [{ground_joint_torque: lambda lambda1, t: 1000*t**2,
-                              lower_arm_joint_torque: lambda lambda2, t: 500*t**2,
-                              upper_arm_joint_torque: lambda lambda3, t: 250*t**2,
-                              finger1_joint_torque: lambda lambda4, t: 100*t**2,
-                              finger2_joint_torque: lambda lambda5, t: 100*t**2},
+      numerical_specifieds = [{ground_joint_torque: lambda lambda1, t: -100*t**2+900*np.ones(np.shape(t)),
+                              lower_arm_joint_torque: lambda lambda2, t: -500*t**2+4500*np.ones(np.shape(t)),
+                              upper_arm_joint_torque: lambda lambda3, t: -25*t**2+225*np.ones(np.shape(t)),
+                              finger1_joint_torque: lambda lambda4, t: -10*t**2+90*np.ones(np.shape(t)),
+                              finger2_joint_torque: lambda lambda5, t: -10*t**2+90*np.ones(np.shape(t))},
 
-                              {ground_joint_torque: lambda lambda1, t: 500*t**2,
-                              lower_arm_joint_torque: lambda lambda2, t: 250*t**2,
-                              upper_arm_joint_torque: lambda lambda3, t: 125*t**2,
-                              finger1_joint_torque: lambda lambda4, t: 50*t**2,
-                              finger2_joint_torque: lambda lambda5, t: 50*t**2},
+                              {ground_joint_torque: lambda lambda1, t: -378*t**2+3404*np.ones(np.shape(t)),
+                              lower_arm_joint_torque: lambda lambda2, t: -190*t**2+1710*np.ones(np.shape(t)),
+                              upper_arm_joint_torque: lambda lambda3, t: -9.5*t**2+85.5*np.ones(np.shape(t)),
+                              finger1_joint_torque: lambda lambda4, t: -3.8*t**2+34.2*np.ones(np.shape(t)),
+                              finger2_joint_torque: lambda lambda5, t: 3.8*t**2+34.2*np.ones(np.shape(t))},
 
-                              {ground_joint_torque: lambda lambda1, t: 250*t**2,
-                              lower_arm_joint_torque: lambda lambda2, t: 125*t**2,
-                              upper_arm_joint_torque: lambda lambda3, t: 67*t**2,
-                              finger1_joint_torque: lambda lambda4, t: 25*t**2,
-                              finger2_joint_torque: lambda lambda5, t: 25*t**2}]
+                              {ground_joint_torque: lambda lambda1, t: -165*t**2+1485*np.ones(np.shape(t)),
+                              lower_arm_joint_torque: lambda lambda2, t: -82.5*t**2+742.5*np.ones(np.shape(t)),
+                              upper_arm_joint_torque: lambda lambda3, t: -4.125*t**2+37.125*np.ones(np.shape(t)),
+                              finger1_joint_torque: lambda lambda4, t: -1.65*t**2+14.85*np.ones(np.shape(t)),
+                              finger2_joint_torque: lambda lambda5, t: -1.65*t**2+14.85*np.ones(np.shape(t))}]
 
       # Integrating the system with the constants, specified and initial condition values
       sys = System(kane,
