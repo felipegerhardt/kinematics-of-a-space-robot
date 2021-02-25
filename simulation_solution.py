@@ -106,6 +106,8 @@ numerical_specifieds = [{ground_joint_torque: lambda lambda1, t: -1000*t**2+9000
                         upper_arm_joint_torque: lambda lambda3, t: -4*t**2+36*np.ones(np.shape(t)),
                         finger1_joint_torque: lambda lambda4, t: -1*t**2+9*np.ones(np.shape(t)),
                         finger2_joint_torque: lambda lambda5, t: -1*t**2+9*np.ones(np.shape(t))}]
+
+# Create the solutions list                  
 solutions = []
 
 for i in range(len(g_values)):
