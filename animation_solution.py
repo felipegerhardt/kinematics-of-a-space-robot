@@ -63,6 +63,6 @@ scene.visualization_frames = [grund_viz_frame,
 
 scene.states_symbols = coordinates + speeds
 scene.constants = constants_dict
-scene.states_trajectories = y
-
-scene.display()
+for i in range(np.shape(solutions[0])):
+    scene.states_trajectories = solutions[i]
+    scene.display()
