@@ -89,23 +89,23 @@ display_constants = {lower_arm_length: 1.0,         # lower_arm_length [m]
 g_values = [9.81, 3.711, 1.62] 
 
 # Create the torques list
-numerical_specifieds = [{ground_joint_torque: lambda lambda1, t: -1000*t**2+9000*np.ones(np.shape(t)),
-                        lower_arm_joint_torque: lambda lambda2, t: -300*t**2+2700*np.ones(np.shape(t)),
-                        upper_arm_joint_torque: lambda lambda3, t: -15*t**2+135*np.ones(np.shape(t)),
-                        finger1_joint_torque: lambda lambda4, t: -5*t**2+45*np.ones(np.shape(t)),
-                        finger2_joint_torque: lambda lambda5, t: -5*t**2+45*np.ones(np.shape(t))},
+numerical_specifieds = [{ground_joint_torque: lambda lambda1, t: -147*t**2+1325*np.ones(np.shape(t)),
+                        lower_arm_joint_torque: lambda lambda2, t: -33.3*t**2+300*np.ones(np.shape(t)),
+                        upper_arm_joint_torque: lambda lambda3, t: -3.33*t**2+30*np.ones(np.shape(t)),
+                        finger1_joint_torque: lambda lambda4, t: -0.055*t**2+0.5*np.ones(np.shape(t)),
+                        finger2_joint_torque: lambda lambda5, t: -0.055*t**2+0.4*np.ones(np.shape(t))},
 
-                        {ground_joint_torque: lambda lambda1, t: -378*t**2+3404*np.ones(np.shape(t)),
-                        lower_arm_joint_torque: lambda lambda2, t: -150*t**2+1350*np.ones(np.shape(t)),
-                        upper_arm_joint_torque: lambda lambda3, t: -7*t**2+63*np.ones(np.shape(t)),
-                        finger1_joint_torque: lambda lambda4, t: -2*t**2+18*np.ones(np.shape(t)),
-                        finger2_joint_torque: lambda lambda5, t: 2*t**2+18*np.ones(np.shape(t))},
+                        {ground_joint_torque: lambda lambda1, t: -55.6*t**2+501*np.ones(np.shape(t)),
+                        lower_arm_joint_torque: lambda lambda2, t: -12.6*t**2+113.5*np.ones(np.shape(t)),
+                        upper_arm_joint_torque: lambda lambda3, t: -1.26*t**2+11.4*np.ones(np.shape(t)),
+                        finger1_joint_torque: lambda lambda4, t: -0.02*t**2+0.18*np.ones(np.shape(t)),
+                        finger2_joint_torque: lambda lambda5, t: -0.01667*t**2+0.15*np.ones(np.shape(t))},
 
-                        {ground_joint_torque: lambda lambda1, t: -150*t**2+1350*np.ones(np.shape(t)),
-                        lower_arm_joint_torque: lambda lambda2, t: -82.5*t**2+742.5*np.ones(np.shape(t)),
-                        upper_arm_joint_torque: lambda lambda3, t: -4*t**2+36*np.ones(np.shape(t)),
-                        finger1_joint_torque: lambda lambda4, t: -1*t**2+9*np.ones(np.shape(t)),
-                        finger2_joint_torque: lambda lambda5, t: -1*t**2+9*np.ones(np.shape(t))}]
+                        {ground_joint_torque: lambda lambda1, t: -24.3*t**2+220*np.ones(np.shape(t)),
+                        lower_arm_joint_torque: lambda lambda2, t: -5.5*t**2+49.5*np.ones(np.shape(t)),
+                        upper_arm_joint_torque: lambda lambda3, t: -0.55*t**2+4.95*np.ones(np.shape(t)),
+                        finger1_joint_torque: lambda lambda4, t: -0.00918*t**2+0.0826*np.ones(np.shape(t)),
+                        finger2_joint_torque: lambda lambda5, t: -0.00735*t**2+0.066*np.ones(np.shape(t))}]
 
 # Create the solutions list                  
 solutions = []
