@@ -40,7 +40,7 @@ coordinates = [lambda1, lambda2, lambda3, lambda4, lambda5]
 speeds = [omega1, omega2, omega3, omega4, omega5]
 
 # Creating time domain as an numpy array
-time_span = 1.5
+time_span = 0.75
 time_points = 60*time_span
 t = linspace(0,time_span,time_points)
 
@@ -86,11 +86,11 @@ display_constants = {lower_arm_length: 1.0,         # lower_arm_length [m]
 g_values = [9.81, 3.711, 1.62] 
 
 # Create the torques list
-numerical_specifieds = [{ground_joint_torque: lambda lambda1, t: -55.66*t**2+501*ones(shape(t)),
-                        lower_arm_joint_torque: lambda lambda2, t: -5.5*t**2+49.5*ones(shape(t)),
-                        upper_arm_joint_torque: lambda lambda3, t: -0.55*t**2+4.95*ones(shape(t)),
-                        finger1_joint_torque: lambda lambda4, t: -0.0000918*t**2+0.00826*ones(shape(t)),
-                        finger2_joint_torque: lambda lambda5, t: -0.0000735*t**2+0.0066*ones(shape(t))},
+numerical_specifieds = [{ground_joint_torque: lambda lambda1, t: -3555*t**2+2500*ones(shape(t)),
+                        lower_arm_joint_torque: lambda lambda2, t: -44*t**2+10*ones(shape(t)),
+                        upper_arm_joint_torque: lambda lambda3, t: -17.7*t**2+10*ones(shape(t)),
+                        finger1_joint_torque: lambda lambda4, t: -0.0000918*t**2+0.001*ones(shape(t)),
+                        finger2_joint_torque: lambda lambda5, t: -0.01778*t**2+0.01*ones(shape(t))},
 
                         {ground_joint_torque: lambda lambda1, t: -21.06*t**2+189.5*ones(shape(t)),
                         lower_arm_joint_torque: lambda lambda2, t: -2.08*t**2+18.73*ones(shape(t)),
