@@ -1,4 +1,5 @@
 from inertial_properties_solution import *
+print('Inertial properties file loaded')
 from sympy.physics.mechanics import RigidBody
 
 # Create the RigidBody object for each body

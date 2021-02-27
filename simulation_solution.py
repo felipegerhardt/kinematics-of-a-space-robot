@@ -1,17 +1,15 @@
 # Loading previous solutions
 from equations_of_motion_solution import *
+print('Equations of motion file loaded')
 
 # Import System to integrate EOM using Kane's Method
 from pydy.system import System
 
 # Import NumPy functions to setp the numerical values and integrate the equations of motion
-from numpy import deg2rad, rad2deg, array, zeros, linspace
+from numpy import deg2rad, rad2deg, array, zeros, linspace, shape, ones
 
 # Import generate_ode_function to transform symbolic equations to numerical functions
 from pydy.codegen.ode_function_generators import generate_ode_function
-
-# Import a few functions from Matplotlib.PyPlot
-from matplotlib.pyplot import plot, legend, xlabel, ylabel, rcParams
 
 # Creating a list with the symbolic constants
 constants = [lower_arm_length,                               # Symbolic form
@@ -42,20 +40,19 @@ coordinates = [lambda1, lambda2, lambda3, lambda4, lambda5]
 speeds = [omega1, omega2, omega3, omega4, omega5]
 
 # Creating time domain as an numpy array
-time_span = 3  
+time_span = 1.5
 time_points = 60*time_span
-import numpy as np
-t = np.linspace(0,time_span,time_points, dtype=np.float64)
+t = linspace(0,time_span,time_points)
 
 # Passing the RHS to the ODE function generator
 right_hand_side = generate_ode_function(forcing_vector, coordinates, speeds, constants, mass_matrix=mass_matrix, specifieds=torques)
 
 # Initial conditions 
-x0 = {lambda1: np.deg2rad(-90),                      # Lower arm horizontally oriented
-      lambda2: np.deg2rad(0),
-      lambda3: np.deg2rad(0),
-      lambda4: np.deg2rad(15),
-      lambda5: np.deg2rad(-15),
+x0 = {lambda1: deg2rad(-90),                      # Lower arm horizontally oriented
+      lambda2: deg2rad(0),
+      lambda3: deg2rad(0),
+      lambda4: deg2rad(15),
+      lambda5: deg2rad(-15),
       omega1: 0.0,
       omega2: 0.0,
       omega3: 0.0,
@@ -89,23 +86,23 @@ display_constants = {lower_arm_length: 1.0,         # lower_arm_length [m]
 g_values = [9.81, 3.711, 1.62] 
 
 # Create the torques list
-numerical_specifieds = [{ground_joint_torque: lambda lambda1, t: -147*t**2+1325*np.ones(np.shape(t)),
-                        lower_arm_joint_torque: lambda lambda2, t: -33.3*t**2+300*np.ones(np.shape(t)),
-                        upper_arm_joint_torque: lambda lambda3, t: -3.33*t**2+30*np.ones(np.shape(t)),
-                        finger1_joint_torque: lambda lambda4, t: -0.055*t**2+0.5*np.ones(np.shape(t)),
-                        finger2_joint_torque: lambda lambda5, t: -0.055*t**2+0.4*np.ones(np.shape(t))},
+numerical_specifieds = [{ground_joint_torque: lambda lambda1, t: -55.66*t**2+501*ones(shape(t)),
+                        lower_arm_joint_torque: lambda lambda2, t: -5.5*t**2+49.5*ones(shape(t)),
+                        upper_arm_joint_torque: lambda lambda3, t: -0.55*t**2+4.95*ones(shape(t)),
+                        finger1_joint_torque: lambda lambda4, t: -0.0000918*t**2+0.00826*ones(shape(t)),
+                        finger2_joint_torque: lambda lambda5, t: -0.0000735*t**2+0.0066*ones(shape(t))},
 
-                        {ground_joint_torque: lambda lambda1, t: -55.6*t**2+501*np.ones(np.shape(t)),
-                        lower_arm_joint_torque: lambda lambda2, t: -12.6*t**2+113.5*np.ones(np.shape(t)),
-                        upper_arm_joint_torque: lambda lambda3, t: -1.26*t**2+11.4*np.ones(np.shape(t)),
-                        finger1_joint_torque: lambda lambda4, t: -0.02*t**2+0.18*np.ones(np.shape(t)),
-                        finger2_joint_torque: lambda lambda5, t: -0.01667*t**2+0.15*np.ones(np.shape(t))},
+                        {ground_joint_torque: lambda lambda1, t: -21.06*t**2+189.5*ones(shape(t)),
+                        lower_arm_joint_torque: lambda lambda2, t: -2.08*t**2+18.73*ones(shape(t)),
+                        upper_arm_joint_torque: lambda lambda3, t: -0.055*t**2+1.873*ones(shape(t)),
+                        finger1_joint_torque: lambda lambda4, t: -0.000347*t**2+0.003125*ones(shape(t)),
+                        finger2_joint_torque: lambda lambda5, t: -0.0002774*t**2+0.0025*ones(shape(t))},
 
-                        {ground_joint_torque: lambda lambda1, t: -24.3*t**2+220*np.ones(np.shape(t)),
-                        lower_arm_joint_torque: lambda lambda2, t: -5.5*t**2+49.5*np.ones(np.shape(t)),
-                        upper_arm_joint_torque: lambda lambda3, t: -0.55*t**2+4.95*np.ones(np.shape(t)),
-                        finger1_joint_torque: lambda lambda4, t: -0.00918*t**2+0.0826*np.ones(np.shape(t)),
-                        finger2_joint_torque: lambda lambda5, t: -0.00735*t**2+0.066*np.ones(np.shape(t))}]
+                        {ground_joint_torque: lambda lambda1, t: -9.2*t**2+82.81*ones(shape(t)),
+                        lower_arm_joint_torque: lambda lambda2, t: -0.91*t**2+8.18*ones(shape(t)),
+                        upper_arm_joint_torque: lambda lambda3, t: -0.091*t**2+0.818*ones(shape(t)),
+                        finger1_joint_torque: lambda lambda4, t: -0.0001517*t**2+0.001365*ones(shape(t)),
+                        finger2_joint_torque: lambda lambda5, t: -0.0001212*t**2+0.0011*ones(shape(t))}]
 
 # Create the solutions list                  
 solutions = []
@@ -134,26 +131,6 @@ for i in range(len(g_values)):
                              finger2_mass: 0.5,             # finger2_mass [kg]
                              finger2_inertia: 0.007322,     # finger2_inertia [kg*m^2]
                              g: g_values[i]}                # acceleration due to gravity [m/s^2]
-
-
-       # Numerical specifieds
-      numerical_specifieds = [{ground_joint_torque: lambda lambda1, t: -1000*t**2+9000*np.ones(np.shape(t)),
-                              lower_arm_joint_torque: lambda lambda2, t: -300*t**2+2700*np.ones(np.shape(t)),
-                              upper_arm_joint_torque: lambda lambda3, t: -15*t**2+135*np.ones(np.shape(t)),
-                              finger1_joint_torque: lambda lambda4, t: -5*t**2+45*np.ones(np.shape(t)),
-                              finger2_joint_torque: lambda lambda5, t: -5*t**2+45*np.ones(np.shape(t))},
-
-                              {ground_joint_torque: lambda lambda1, t: -378*t**2+3404*np.ones(np.shape(t)),
-                              lower_arm_joint_torque: lambda lambda2, t: -150*t**2+1350*np.ones(np.shape(t)),
-                              upper_arm_joint_torque: lambda lambda3, t: -7*t**2+63*np.ones(np.shape(t)),
-                              finger1_joint_torque: lambda lambda4, t: -2*t**2+18*np.ones(np.shape(t)),
-                              finger2_joint_torque: lambda lambda5, t: 2*t**2+18*np.ones(np.shape(t))},
-
-                              {ground_joint_torque: lambda lambda1, t: -150*t**2+1350*np.ones(np.shape(t)),
-                              lower_arm_joint_torque: lambda lambda2, t: -82.5*t**2+742.5*np.ones(np.shape(t)),
-                              upper_arm_joint_torque: lambda lambda3, t: -4*t**2+36*np.ones(np.shape(t)),
-                              finger1_joint_torque: lambda lambda4, t: -1*t**2+9*np.ones(np.shape(t)),
-                              finger2_joint_torque: lambda lambda5, t: -1*t**2+9*np.ones(np.shape(t))}]
       
       for j in range(len(numerical_specifieds)):
                  
@@ -165,3 +142,4 @@ for i in range(len(g_values)):
                         times=t)
                         
             solutions.append(sys.integrate())
+            print(f'Simulation (g: {g_values[i]} m/s², torques comb.: {j+1}) completed')

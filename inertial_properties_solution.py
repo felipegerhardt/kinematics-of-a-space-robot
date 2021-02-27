@@ -1,5 +1,6 @@
 # Loading previous solutions
 from points_location_solution import *
+print('Points and locations file loaded')
 from sympy.physics.mechanics import Point, dynamicsymbols, inertia, RigidBody
 from sympy import symbols, simplify
 

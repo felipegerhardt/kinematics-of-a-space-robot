@@ -1,4 +1,6 @@
 from reference_frame_solution import *
+print('Reference frame file loaded')
+
 from sympy.physics.mechanics import Point, dynamicsymbols
 from sympy import symbols, simplify
 
