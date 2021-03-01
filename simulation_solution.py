@@ -84,27 +84,25 @@ display_constants = {lower_arm_length: 1.0,         # lower_arm_length [m]
 
 # Declare the gravity values for earth, mars and the moon.
 g_values = [9.81, 3.711, 1.62] 
-earth_mars = g_values[0]/g_values[1]
-earth_moon = g_values[0]/g_values[2]
 
 # Create the torques list
-numerical_specifieds = [{ground_joint_torque: lambda lambda1, t: -7644*t**2+4300*ones(shape(t)),
+numerical_specifieds = [{ground_joint_torque: lambda lambda1, t: -7644*t**2+4300*ones(shape(t)), # Generating good results
                         lower_arm_joint_torque: lambda lambda2, t: -1422*t**2+800*ones(shape(t)),
                         upper_arm_joint_torque: lambda lambda3, t: -53*t**2+30*ones(shape(t)),
                         finger1_joint_torque: lambda lambda4, t: -3.55*t**2+1.2*ones(shape(t)),
                         finger2_joint_torque: lambda lambda5, t: -2.66*t**2+1.5*ones(shape(t))},
 
-                        {ground_joint_torque: lambda lambda1, t: -21.06*t**2+189.5*ones(shape(t)),
-                        lower_arm_joint_torque: lambda lambda2, t: -2.08*t**2+18.73*ones(shape(t)),
-                        upper_arm_joint_torque: lambda lambda3, t: -0.055*t**2+1.873*ones(shape(t)),
-                        finger1_joint_torque: lambda lambda4, t: -0.000347*t**2+0.003125*ones(shape(t)),
-                        finger2_joint_torque: lambda lambda5, t: -0.0002774*t**2+0.0025*ones(shape(t))},
+                        {ground_joint_torque: lambda lambda1, t: -4355.56*t**2+2450*ones(shape(t)),
+                        lower_arm_joint_torque: lambda lambda2, t: -755*t**2+425*ones(shape(t)),
+                        upper_arm_joint_torque: lambda lambda3, t: -28.44*t**2+16*ones(shape(t)),
+                        finger1_joint_torque: lambda lambda4, t: -0.807*t**2+0.554*ones(shape(t)),
+                        finger2_joint_torque: lambda lambda5, t: -1*t**2+0.6674*ones(shape(t))},
 
-                        {ground_joint_torque: lambda lambda1, t: -9.2*t**2+82.81*ones(shape(t)),
-                        lower_arm_joint_torque: lambda lambda2, t: -0.91*t**2+8.18*ones(shape(t)),
-                        upper_arm_joint_torque: lambda lambda3, t: -0.091*t**2+0.818*ones(shape(t)),
-                        finger1_joint_torque: lambda lambda4, t: -0.0001517*t**2+0.001365*ones(shape(t)),
-                        finger2_joint_torque: lambda lambda5, t: -0.0001212*t**2+0.0011*ones(shape(t))}]
+                        {ground_joint_torque: lambda lambda1, t: -3022.22*t**2+1700*ones(shape(t)),
+                        lower_arm_joint_torque: lambda lambda2, t: -533.33*t**2+300*ones(shape(t)),
+                        upper_arm_joint_torque: lambda lambda3, t: -17.78*t**2+10*ones(shape(t)),
+                        finger1_joint_torque: lambda lambda4, t: -0.5511*t**2+0.31*ones(shape(t)),
+                        finger2_joint_torque: lambda lambda5, t: -0.8533*t**2+0.48*ones(shape(t))}]
 
 # Create the solutions list                  
 solutions = []
