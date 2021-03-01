@@ -37,13 +37,13 @@ ground_joint_torque, lower_arm_joint_torque, upper_arm_joint_torque, finger1_joi
 # Express the torque vector of each body (remember Newton's third law)
 lower_arm_torque_vector = ground_joint_torque * inertial_frame.z - lower_arm_joint_torque * inertial_frame.z
 upper_arm_torque_vector = lower_arm_joint_torque * inertial_frame.z - upper_arm_joint_torque * inertial_frame.z
-hand_torque_vector = upper_arm_joint_torque * inertial_frame.z + finger1_joint_torque * inertial_frame.z  - finger2_joint_torque * inertial_frame.z 
+hand_torque_vector = upper_arm_joint_torque * inertial_frame.z - finger1_joint_torque * inertial_frame.z  - finger2_joint_torque * inertial_frame.z 
 finger1_torque_vector = finger1_joint_torque * inertial_frame.z
 finger2_torque_vector = finger2_joint_torque * inertial_frame.z
 
 # Create a tuple to hold torque information
 lower_arm_torque = (lower_arm_frame, lower_arm_torque_vector)
-upper_arm_torque = (upper_arm_frame, lower_arm_torque_vector)
+upper_arm_torque = (upper_arm_frame, upper_arm_torque_vector)
 hand_torque = (hand_frame, hand_torque_vector)
 finger1_torque = (finger1_frame, finger1_torque_vector)
 finger2_torque = (finger2_frame, finger2_torque_vector)

@@ -51,8 +51,8 @@ right_hand_side = generate_ode_function(forcing_vector, coordinates, speeds, con
 x0 = {lambda1: deg2rad(-90),                      # Lower arm horizontally oriented
       lambda2: deg2rad(0),
       lambda3: deg2rad(0),
-      lambda4: deg2rad(15),
-      lambda5: deg2rad(-15),
+      lambda4: deg2rad(-15),
+      lambda5: deg2rad(15),
       omega1: 0.0,
       omega2: 0.0,
       omega3: 0.0,
@@ -86,11 +86,11 @@ display_constants = {lower_arm_length: 1.0,         # lower_arm_length [m]
 g_values = [9.81, 3.711, 1.62] 
 
 # Create the torques list
-numerical_specifieds = [{ground_joint_torque: lambda lambda1, t: -3555*t**2+2500*ones(shape(t)),
-                        lower_arm_joint_torque: lambda lambda2, t: -44*t**2+10*ones(shape(t)),
-                        upper_arm_joint_torque: lambda lambda3, t: -17.7*t**2+10*ones(shape(t)),
-                        finger1_joint_torque: lambda lambda4, t: -0.0000918*t**2+0.001*ones(shape(t)),
-                        finger2_joint_torque: lambda lambda5, t: -0.01778*t**2+0.01*ones(shape(t))},
+numerical_specifieds = [{ground_joint_torque: lambda lambda1, t: -7644*t**2+4300*ones(shape(t)),
+                        lower_arm_joint_torque: lambda lambda2, t: -1422*t**2+800*ones(shape(t)),
+                        upper_arm_joint_torque: lambda lambda3, t: -53*t**2+30*ones(shape(t)),
+                        finger1_joint_torque: lambda lambda4, t: -3.55*t**2+0.5*ones(shape(t)),
+                        finger2_joint_torque: lambda lambda5, t: -2.66*t**2+0.5*ones(shape(t))},
 
                         {ground_joint_torque: lambda lambda1, t: -21.06*t**2+189.5*ones(shape(t)),
                         lower_arm_joint_torque: lambda lambda2, t: -2.08*t**2+18.73*ones(shape(t)),
