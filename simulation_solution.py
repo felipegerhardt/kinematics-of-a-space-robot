@@ -84,13 +84,15 @@ display_constants = {lower_arm_length: 1.0,         # lower_arm_length [m]
 
 # Declare the gravity values for earth, mars and the moon.
 g_values = [9.81, 3.711, 1.62] 
+earth_mars = g_values[0]/g_values[1]
+earth_moon = g_values[0]/g_values[2]
 
 # Create the torques list
 numerical_specifieds = [{ground_joint_torque: lambda lambda1, t: -7644*t**2+4300*ones(shape(t)),
                         lower_arm_joint_torque: lambda lambda2, t: -1422*t**2+800*ones(shape(t)),
                         upper_arm_joint_torque: lambda lambda3, t: -53*t**2+30*ones(shape(t)),
-                        finger1_joint_torque: lambda lambda4, t: -3.55*t**2+0.5*ones(shape(t)),
-                        finger2_joint_torque: lambda lambda5, t: -2.66*t**2+0.5*ones(shape(t))},
+                        finger1_joint_torque: lambda lambda4, t: -3.55*t**2+1.2*ones(shape(t)),
+                        finger2_joint_torque: lambda lambda5, t: -2.66*t**2+1.5*ones(shape(t))},
 
                         {ground_joint_torque: lambda lambda1, t: -21.06*t**2+189.5*ones(shape(t)),
                         lower_arm_joint_torque: lambda lambda2, t: -2.08*t**2+18.73*ones(shape(t)),
