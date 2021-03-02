@@ -17,6 +17,7 @@ For animation and graphic visualization purposes, the following libraries are ne
 - Matplotlib.Pyplot;
 - Pydy.viz.
 
+The step by step used in this repository is similar to reference [6].
 ---
 
 ## Inspiration
@@ -107,3 +108,4 @@ The numerical simulations output the generalized coordinates and velocities for 
 [4] P. Fournier-Viger, R. Nkambou and A. Mayers, "Evaluating Spatial Representations and Skills in a Simulator-Based Tutoring System," in IEEE Transactions on Learning Technologies, vol. 1, no. 1, pp. 63-74, Jan.-March 2008, doi: 10.1109/TLT.2008.13. 
 <br /> 
 [5] https://spaceq.ca/spacewalk-needed-to-replace-another-degraded-canadarm2-hand-on-the-international-space-station/
+[6] https://github.com/pydy/pydy-tutorial-human-standing/tree/master/notebooks
